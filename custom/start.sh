@@ -19,6 +19,7 @@ cp -rL /custom/layers/* /build/yocto-fus/sources/
 
 # patches
 cp /custom/patch/scons.bbclass /build/yocto-fus/sources/poky/meta/classes/scons.bbclass
+cp /custom/patch/meta-disco-camera-opencv.bb /build/yocto-fus/sources/meta-disco-camera/recipes/opencv/opencv_4.1.0.bb
 
 cd /build/yocto-fus/
 source setup-environment build-fsimx8mp-fus-imx-wayland

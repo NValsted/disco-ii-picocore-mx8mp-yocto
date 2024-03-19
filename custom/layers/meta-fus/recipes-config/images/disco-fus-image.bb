@@ -57,3 +57,14 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     kernel-module-nxp89xx \
     v4l-utils \
 "
+
+
+SRC_URI += "file://disco-pipeline.service"
+
+do_install:append() {
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/disco-pipeline.service ${D}${systemd_unitdir}/system
+}
+
+SYSTEMD_PACKAGES = "${PN}"
+SYSTEMD_SERVICE_${PN} = "disco-pipeline.service"

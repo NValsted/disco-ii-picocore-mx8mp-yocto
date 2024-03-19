@@ -1,0 +1,9 @@
+# disco-pipline.service
+[Unit]
+Description=Disco Image Processing Pipeline service
+
+[Service]
+ExecStart=/usr/bin/dipp -i CAN -p can0
+
+[Install]
+WantedBy=multi-user.target
